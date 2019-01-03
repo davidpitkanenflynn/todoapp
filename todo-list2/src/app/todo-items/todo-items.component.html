@@ -1,0 +1,10 @@
+
+<form action="">
+  <ul class="heroes">
+    <li *ngFor="let todo of getItems(); let i = index">
+      <span class="badge"> {{i+1}}.
+        {{todo.Name}}
+      </span>
+    </li>
+  </ul>
+</form>

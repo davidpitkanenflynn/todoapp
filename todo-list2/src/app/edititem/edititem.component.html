@@ -1,0 +1,17 @@
+
+
+
+<div class="m-t-1 m-b-1">
+  <input class="form-control inputsize" #todoText [value]="getSelected()" />
+  <button class="button button2" type="submit" (click)="editItem(todoText.value)" >Apply Edit</button>
+  <button class="button button2" type="submit" (click)="deleteItem()">Delete</button>
+</div>
+<br/>
+  <ul class="heroes">
+    <li *ngFor="let todo of getItems(); let i = index">
+      <span class="badge">
+        <input type="radio" name="todoItem" [value]="todo.Name"
+               (change)="changeButton(todo.Name, todo.identifier)"> {{todo.Name}}
+      </span>
+    </li>
+  </ul>

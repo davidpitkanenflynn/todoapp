@@ -1,0 +1,14 @@
+
+
+<div class="m-t-1 m-b-1">
+  <input class="form-control inputsize" #todoText [value]="getSelected()" />
+  <button class="button button2" type="submit" (click)="addItem(todoText.value)">Add Item</button>
+</div>
+<br/>
+<ul class="heroes">
+  <li *ngFor="let todo of getItems(); let i = index">
+    <span class="badge"> {{i+1}}.
+     {{todo.Name}}
+    </span>
+  </li>
+</ul>
