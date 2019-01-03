@@ -1,0 +1,5 @@
+C:\Users\david.pitkanen\Source\testapps\todolistapi\.vs\todolistapi\lut\0\b\todolistapi\bin\todolistapi.dll.config
+C:\Users\david.pitkanen\Source\testapps\todolistapi\.vs\todolistapi\lut\0\b\todolistapi\bin\todolistapi.dll
+C:\Users\david.pitkanen\Source\testapps\todolistapi\.vs\todolistapi\lut\0\i\todolistapi\Debug\todolistapi.csproj.CoreCompileInputs.cache
+C:\Users\david.pitkanen\Source\testapps\todolistapi\.vs\todolistapi\lut\0\i\todolistapi\Debug\todolistapi.csproj.CopyComplete
+C:\Users\david.pitkanen\Source\testapps\todolistapi\.vs\todolistapi\lut\0\i\todolistapi\Debug\todolistapi.dll

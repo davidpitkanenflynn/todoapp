@@ -1,0 +1,8 @@
+C:\Users\david.pitkanen\Source\testapps\todolistapi\.vs\todolistapi\lut\0\b\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\david.pitkanen\Source\testapps\todolistapi\.vs\todolistapi\lut\0\b\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\david.pitkanen\Source\testapps\todolistapi\.vs\todolistapi\lut\0\b\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\david.pitkanen\Source\testapps\todolistapi\.vs\todolistapi\lut\0\b\UnitTestProject\bin\Debug\UnitTestProject.dll.config
+C:\Users\david.pitkanen\Source\testapps\todolistapi\.vs\todolistapi\lut\0\b\UnitTestProject\bin\Debug\UnitTestProject.dll
+C:\Users\david.pitkanen\Source\testapps\todolistapi\.vs\todolistapi\lut\0\i\UnitTestProject\Debug\UnitTestProject.csproj.CoreCompileInputs.cache
+C:\Users\david.pitkanen\Source\testapps\todolistapi\.vs\todolistapi\lut\0\i\UnitTestProject\Debug\UnitTestProject.csproj.CopyComplete
+C:\Users\david.pitkanen\Source\testapps\todolistapi\.vs\todolistapi\lut\0\i\UnitTestProject\Debug\UnitTestProject.dll

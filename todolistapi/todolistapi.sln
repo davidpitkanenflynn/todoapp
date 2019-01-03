@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "todolistapi", "todolistapi\todolistapi.csproj", "{D20D0E73-7397-4A68-9C8D-2848D16F9209}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{FA003E31-38C3-4B24-A137-4C0E9A6A099A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D20D0E73-7397-4A68-9C8D-2848D16F9209}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D20D0E73-7397-4A68-9C8D-2848D16F9209}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D20D0E73-7397-4A68-9C8D-2848D16F9209}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D20D0E73-7397-4A68-9C8D-2848D16F9209}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA003E31-38C3-4B24-A137-4C0E9A6A099A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA003E31-38C3-4B24-A137-4C0E9A6A099A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA003E31-38C3-4B24-A137-4C0E9A6A099A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA003E31-38C3-4B24-A137-4C0E9A6A099A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7CDF58F3-4923-4F72-9737-744C26A4F21D}
+	EndGlobalSection
+EndGlobal
