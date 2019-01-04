@@ -74,6 +74,7 @@ describe('Unit tests on various methods', () => {
   });
 
   it('add the item calls correct method in service', () => {
+    component.selected = { Name: "Item to delete", identifier: 2 };
     component.deleteItem();
     expect(service.lsDeleteItem).toHaveBeenCalled();
     component.editItem('this is a edited item entry');

@@ -19,14 +19,10 @@ namespace todolistapi.Controllers
 {
     public class ItemizedsController : ApiController
     {
-        private todolistapiContext db = new todolistapiContext();
-        //public const string ConnectionString = "mongodb://serviceappdbuser:flynnserviceapp@simpletodolistapplicationdb-shard-00-00-rkhbn.mongodb.net:27017,simpletodolistapplicationdb-shard-00-01-rkhbn.mongodb.net:27017,simpletodolistapplicationdb-shard-00-02-rkhbn.mongodb.net:27017/test?ssl=true&replicaSet=simpletodolistapplicationdb-shard-0&authSource=admin&retryWrites=true";
-        //public const string ConnectionString2 = "mongodb://admin:grade123@ds139944.mlab.com:39944/simpleapplicationdb";
-        //public const string dbase = "simpleapp";
-        //public const string collection = "todolist";
-        private IMongohelper _mhelper;// = new Mongohelper();
+       
+        private IItemizedRepository _mhelper;
 
-        public ItemizedsController(IMongohelper mhelper)
+        public ItemizedsController(IItemizedRepository mhelper)
         {
             this._mhelper = mhelper;
         }
@@ -34,20 +30,7 @@ namespace todolistapi.Controllers
         // GET: api/Itemizeds
         public List<Itemized> GetItemizeds()
         {
-            return _mhelper.getCollections();
-        }
-
-        // GET: api/Itemizeds/5
-        [ResponseType(typeof(Itemized))]
-        public IHttpActionResult GetItemized(string id)
-        {
-            Itemized itemized = db.Itemizeds.Find(id);
-            if (itemized == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(itemized);
+            return _mhelper.getCollections;
         }
 
         // PUT: api/Itemizeds/5
@@ -97,18 +80,5 @@ namespace todolistapi.Controllers
             }
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        private bool ItemizedExists(string id)
-        {
-            return db.Itemizeds.Count(e => e.Id == id) > 0;
-        }
     }
 }

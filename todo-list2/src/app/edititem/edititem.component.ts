@@ -10,45 +10,36 @@ import { ListingService } from '../listing.service';
 export class EdititemComponent implements OnInit {
 
   public todoitems = [];
-  public checkedButton = "";
-  public identifier = 1;
+  public selected = null;
 
   constructor(private _listingSevice: ListingService) { }
 
   ngOnInit() {
-    //this.todoitems = this._listingSevice.getlistings().subscribe();
-    return this._listingSevice.getlistings().subscribe(data => this.todoitems = data);
-    //this.identifier = this.todoitems[0].identifier;
-    //this.checkedButton = this.todoitems[0].Name;
+    this.loadItems();
   }
 
-  getItems() {
+  private loadItems(): void {
+    this._listingSevice.getlistings().subscribe(data => this.todoitems = data);
+  }
+
+  get items() {
     return this.todoitems;
-  }
-
-  getSelected() {
-    return this.checkedButton;
   }
 
   editItem(editedText) {
     let p = new Todoitem();
     p.Name = editedText;
-    // need to find the smallest integer not in the set
-    p.identifier = this.identifier;
-    this._listingSevice.editlistings(p).subscribe(() => this._listingSevice.getlistings().subscribe(data => this.todoitems = data));
+    p.identifier = this.selected.identifier;
+    this._listingSevice.editlistings(p).subscribe(() => this.loadItems());
     
   }
 
   deleteItem() {
-    // then this.checkedButton
-    this._listingSevice.lsDeleteItem(this.identifier).subscribe(() => this._listingSevice.getlistings().subscribe(data => this.todoitems = data));
-    //this.delay(500);
-    //this._listingSevice.getlistings().subscribe(data => this.todoitems = data);
+    this._listingSevice.lsDeleteItem(this.selected.identifier).subscribe(() => this.loadItems());
   }
 
-  changeButton(checkButton, identifier) {
-    this.checkedButton = checkButton;
-    this.identifier = identifier;
+  changeButton(item) {
+    this.selected = item;
   }
 
 

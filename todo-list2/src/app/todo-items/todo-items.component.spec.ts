@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
-
+import { fakeAsync, tick } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { ListingService } from '../listing.service';
+import { Todoitem } from '../todoitem';
+import { of } from 'rxjs';
 import { TodoItemsComponent } from './todo-items.component';
 
 describe('TodoItemsComponent', () => {
@@ -26,14 +30,8 @@ describe('TodoItemsComponent', () => {
   });
 });
 
-import { fakeAsync, tick } from '@angular/core/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { ListingService } from '../listing.service';
-import { Todoitem } from '../todoitem';
-import { of } from 'rxjs';
 
 describe('Unit tests on various methods', () => {
-
 
   let service: ListingService;
   let httpMock: HttpTestingController;
@@ -41,6 +39,7 @@ describe('Unit tests on various methods', () => {
   let fixture: ComponentFixture<TodoItemsComponent>;
   let arrayL: number;
   let newName: string;
+  let tdo: Todoitem[] = [{ Name: 'Latest Add', identifier: 6 }];
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -50,19 +49,20 @@ describe('Unit tests on various methods', () => {
       providers: [ListingService]
     })
       .compileComponents();
-    var tdo: Todoitem[] = [{ Name: 'Latest Add', identifier: 6 }];
 
+    fixture = TestBed.createComponent(TodoItemsComponent);
     service = TestBed.get(ListingService);
     httpMock = TestBed.get(HttpTestingController);
-    component = new TodoItemsComponent(service);
+    component = fixture.componentInstance;
 
     spyOn(service, 'getlistings').and.returnValue(of(tdo));
 
   }));
 
   it('check that ngOninit calls the getlistings method', () => {
-    component.ngOnInit();
+    fixture.detectChanges();
     expect(service.getlistings).toHaveBeenCalled();
+    expect(component.todoitems).toEqual(tdo);
   });
 
 

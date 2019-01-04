@@ -1,0 +1,2 @@
+C:\Users\david.pitkanen\Source\testapps\todoapp\todolistapi\.vs\todolistapi\lut\0\i\UnitTestProject\Debug\UnitTestProject.csprojAssemblyReference.cache
+C:\Users\david.pitkanen\Source\testapps\todoapp\todolistapi\.vs\todolistapi\lut\0\i\UnitTestProject\Debug\UnitTestProject.csproj.CoreCompileInputs.cache

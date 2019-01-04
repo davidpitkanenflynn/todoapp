@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpRequest } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { ListingService } from './listing.service';
 import { Todoitem } from './todoitem';
@@ -31,15 +31,17 @@ describe('ListingService', () => {
   it('Test getlisings: make sure it calls GET method and returns GET response', () => {
     const dummyList = [{ Name: 'Finish App', identifier: 1 },
     { Name: 'exercise', identifier: 4 },
-      { Name: 'read about agile', identifier: 3 }];
+    { Name: 'read about agile', identifier: 3 }];
 
     service.getlistings().subscribe(todolist => {
       expect(todolist.length).toBe(3);
       expect(todolist).toEqual(dummyList);
     });
 
-    const request = httpMock.expectOne(service._url);
-    expect(request.request.method).toBe('GET');
+    const request = httpMock.expectOne({
+      url: service._url,
+      method: 'GET'
+    });
     //here call request method with dummylist
     request.flush(dummyList);
 
@@ -49,8 +51,14 @@ describe('ListingService', () => {
   it('addlisting calls post method with correct URL', () => {
     const tdo: Todoitem = { Name: 'New list member', identifier: 5 };
     service.addlistings(tdo).subscribe();
-    const request = httpMock.expectOne(service._url); // expect this url to have been called 1 time
-    expect(request.request.method).toBe('POST'); // expect the method to be POST
+    const request = httpMock.expectOne((req: HttpRequest<any>) => {
+
+      expect(req.body).toEqual(tdo);
+      expect(req.method).toEqual('POST');
+      expect(req.url).toEqual(service._url);
+
+      return true;
+    }); // expect this url to have been called 1 time
     request.flush(tdo); // tells what to return from the request
   });
 

@@ -200,12 +200,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="IServices\IMongohelper.cs" />
+    <Compile Include="IServices\IItemizedRepository.cs" />
     <Compile Include="ItemizedInstaller.cs" />
     <Compile Include="Models\Itemized.cs" />
     <Compile Include="Models\todolistapiContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\Mongohelper.cs" />
+    <Compile Include="Services\ItemizedRepository.cs" />
     <Compile Include="WindsorDependencyResolver.cs" />
     <Compile Include="WindsorDependencyScope.cs" />
   </ItemGroup>

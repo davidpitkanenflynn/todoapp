@@ -32,7 +32,7 @@ namespace todolistapi
                                   .BasedOn<IHttpController>()
                                   .LifestylePerWebRequest()); //***
                  container.Register(
-                     Component.For<IMongohelper>().ImplementedBy<Mongohelper>()
+                     Component.For<IItemizedRepository>().ImplementedBy<ItemizedRepository>()
                  );
         }
     }
